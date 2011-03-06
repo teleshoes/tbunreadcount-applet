@@ -1,35 +1,35 @@
 /**************************************************************************
- *  TPBattStatApplet v0.1
+ *  TBUnreadCountApplet v0.1
  *  Copyright 2011 Elliot Wolk
  **************************************************************************
- *  This file is part of TPBattStatApplet.
+ *  This file is part of TBUnreadCountApplet.
  *
- *  TPBattStatApplet is free software: you can redistribute it and/or
+ *  TBUnreadCountApplet is free software: you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License as
  *  published by the Free Software Foundation, either version 3 of the
  *  License, or (at your option) any later version.
  *
- *  TPBattStatApplet is distributed in the hope that it will be useful,
+ *  TBUnreadCountApplet is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with TPBattStatApplet.  If not, see <http://www.gnu.org/licenses/>.
+ *  along with TBUnreadCountApplet.  If not, see <http://www.gnu.org/licenses/>.
  *************************************************************************/
 
-#ifndef TPBATTSTAT_DISPLAY_H
-#define TPBATTSTAT_DISPLAY_H
+#ifndef TBUNREADCOUNT_DISPLAY_H
+#define TBUNREADCOUNT_DISPLAY_H
 
 #include <panel-applet.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gtk/gtklabel.h>
 #include <gtk/gtkimage.h>
 
-#include "tpbattstat-battinfo.h"
-#include "tpbattstat-prefs.h"
+#include "tbunreadcount-battinfo.h"
+#include "tbunreadcount-prefs.h"
 
-#define PIXMAP_DIR "/usr/share/pixmaps/tpbattstat-applet"
+#define PIXMAP_DIR "/usr/share/pixmaps/tbunreadcount-applet"
 #define IMAGE_HEIGHT 24
 #define IMAGE_WIDTH 24
 
@@ -66,4 +66,4 @@ void update_display (HUD *hud, BatteryStatus *status, Prefs *prefs);
 
 void init_display (HUD *hud, PanelApplet *applet);
 
-#endif /* TPBATTSTAT_DISPLAY_H */
+#endif /* TBUNREADCOUNT_DISPLAY_H */

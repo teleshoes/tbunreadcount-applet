@@ -1,27 +1,27 @@
 /**************************************************************************
- *  TPBattStatApplet v0.1
+ *  TBUnreadCountApplet v0.1
  *  Copyright 2011 Elliot Wolk
  **************************************************************************
- *  This file is part of TPBattStatApplet.
+ *  This file is part of TBUnreadCountApplet.
  *
- *  TPBattStatApplet is free software: you can redistribute it and/or
+ *  TBUnreadCountApplet is free software: you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License as
  *  published by the Free Software Foundation, either version 3 of the
  *  License, or (at your option) any later version.
  *
- *  TPBattStatApplet is distributed in the hope that it will be useful,
+ *  TBUnreadCountApplet is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with TPBattStatApplet.  If not, see <http://www.gnu.org/licenses/>.
+ *  along with TBUnreadCountApplet.  If not, see <http://www.gnu.org/licenses/>.
  *************************************************************************/
 
-#ifndef TPBATTSTAT_BATTINFO_H
-#define TPBATTSTAT_BATTINFO_H
+#ifndef TBUNREADCOUNT_BATTINFO_H
+#define TBUNREADCOUNT_BATTINFO_H
 
-#include "tpbattstat-prefs.h"
+#include "tbunreadcount-prefs.h"
 
 enum BatteryState { IDLE, CHARGING, DISCHARGING };
 
@@ -55,4 +55,4 @@ int perhaps_inhibit_charge(BatteryStatus *status,
         enum ChargeStrategy strategy, int threshold,
         const int brackets[], int bracketsSize, int bracketsPrefBat);
 
-#endif /* TPBATTSTAT_BATTINFO_H */
+#endif /* TBUNREADCOUNT_BATTINFO_H */

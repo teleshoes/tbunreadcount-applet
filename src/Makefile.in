@@ -78,7 +78,7 @@ bin_PROGRAMS = tbunreadcount-applet smapi-battaccess
 smapi-battaccess_SOURCES = smapi-battaccess.c
 smapi-battaccess_LDADD = $(GNOME_APPLETS_LIBS)
 
-tbunreadcount-applet_SOURCES = tbunreadcount-applet.c tpbattstat-battinfo.c tpbattstat-display.c
+tbunreadcount-applet_SOURCES = tbunreadcount-applet.c tbunreadcount-battinfo.c tbunreadcount-display.c
 
 tbunreadcount-applet_LDADD = $(GNOME_APPLETS_LIBS)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
@@ -94,7 +94,7 @@ smapi-battaccess_OBJECTS = smapi-battaccess.o
 smapi-battaccess_DEPENDENCIES = 
 smapi-battaccess_LDFLAGS = 
 
-tbunreadcount-applet_OBJECTS = tbunreadcount-applet.o tpbattstat-battinfo.o tpbattstat-display.o tpbattstat-prefs.o
+tbunreadcount-applet_OBJECTS = tbunreadcount-applet.o tbunreadcount-battinfo.o tbunreadcount-display.o tbunreadcount-prefs.o
 tbunreadcount-applet_DEPENDENCIES = 
 tbunreadcount-applet_LDFLAGS = 
 CFLAGS = @CFLAGS@
