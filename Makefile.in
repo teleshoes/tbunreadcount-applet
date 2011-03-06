@@ -73,17 +73,14 @@ VERSION = @VERSION@
 SUBDIRS = src
 
 serverdir = $(libdir)/bonobo/servers
-server_in_files = TPBattStatApplet_Factory.server.in
+server_in_files = TBUnreadCountApplet_Factory.server.in
 server_DATA = $(server_in_files:.server.in=.server)
 
-pixmapdir = $(datadir)/pixmaps/tpbattstat-applet
-pixmap_DATA = tpbattstat-applet.svg \
-  icons/none.svg \
-  icons/idle/*.svg \
-  icons/charging/*.svg \
-  icons/discharging/*.svg
+pixmapdir = $(datadir)/pixmaps/tbunreadcount-applet
+pixmap_DATA = tbunreadcount-applet.svg \
+  icons/none.svg
   
-EXTRA_DIST =  	$(pixmap_DATA) 	TPBattStatApplet_Factory.server.in
+EXTRA_DIST =  	$(pixmap_DATA) 	TBUnreadCountApplet_Factory.server.in
 
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

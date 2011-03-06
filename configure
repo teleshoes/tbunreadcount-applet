@@ -554,7 +554,7 @@ PACKAGE_STRING=
 PACKAGE_BUGREPORT=
 PACKAGE_URL=
 
-ac_unique_file="src/tpbattstat-applet.c"
+ac_unique_file="src/tbunreadcount-applet.c"
 ac_subst_vars='LTLIBOBJS
 LIBOBJS
 GNOME_APPLETS_LIBS
@@ -2004,7 +2004,7 @@ $as_echo "no" >&6; }
 fi
 
 
-PACKAGE=tpbattstat-applet
+PACKAGE=tbunreadcount-applet
 
 VERSION=0.1
 
