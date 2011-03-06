@@ -130,13 +130,6 @@ install-binPROGRAMS: $(bin_PROGRAMS)
 	  if test -f $$p; then \
 	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
                 $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
-	    if test -f $$a; then \
-            o=`echo "$(bindir)/$$p" | sed -e 's|/|.|g' -e 's|^.||'`; \
-            echo "cat $$a | sed -e 's|\@BINDIR\@|$(bindir)|' > $$o"; \
-                  cat $$a | sed -e 's|\@BINDIR\@|$(bindir)|' > $$o; \
-	        echo "  chmod u+s $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
-	                chmod u+s $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
-	    else :; fi; \
 	  else :; fi; \
 	done
 
