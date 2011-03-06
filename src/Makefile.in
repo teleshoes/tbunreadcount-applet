@@ -73,10 +73,7 @@ VERSION = @VERSION@
 INCLUDES = -I. -I$(srcdir) 	$(GNOME_APPLETS_CFLAGS) 	-DGNOMEICONDIR=\""$(prefix)/share/pixmaps"\"
 
 
-bin_PROGRAMS = tbunreadcount-applet smapi-battaccess
-
-smapi-battaccess_SOURCES = smapi-battaccess.c
-smapi-battaccess_LDADD = $(GNOME_APPLETS_LIBS)
+bin_PROGRAMS = tbunreadcount-applet
 
 tbunreadcount-applet_SOURCES = tbunreadcount-applet.c tbunreadcount-battinfo.c tbunreadcount-display.c
 
@@ -90,10 +87,6 @@ DEFS = @DEFS@ -I. -I$(srcdir)
 CPPFLAGS = @CPPFLAGS@
 LDFLAGS = @LDFLAGS@
 LIBS = @LIBS@
-smapi-battaccess_OBJECTS = smapi-battaccess.o
-smapi-battaccess_DEPENDENCIES = 
-smapi-battaccess_LDFLAGS = 
-
 tbunreadcount-applet_OBJECTS = tbunreadcount-applet.o tbunreadcount-battinfo.o tbunreadcount-display.o tbunreadcount-prefs.o
 tbunreadcount-applet_DEPENDENCIES = 
 tbunreadcount-applet_LDFLAGS = 
@@ -221,8 +214,6 @@ distdir: $(DISTFILES)
 	  fi; \
 	done
 leenie.o: leenie.c
-
-smapi-battaccess.o: smapi-battaccess.c
 
 tbunreadcount-applet.o: tbunreadcount-applet.c
 
