@@ -1,0 +1,25 @@
+<oaf_info>
+<oaf_server iid="OAFIID:TBUnreadCountApplet_Factory" type="exe"
+            location="@BINDIR@/tbunreadcount-applet">
+
+        <oaf_attribute name="repo_ids" type="stringv">
+                <item value="IDL:Bonobo/GenericFactory:1.0"/>
+                <item value="IDL:Bonobo/Unknown:1.0"/>
+        </oaf_attribute>
+        <oaf_attribute name="name" type="string" value="Thunderbird Unread Count Factory"/>
+        <oaf_attribute name="description" type="string" value="Factory to create TBUnreadCount Applet"/>
+</oaf_server>
+
+<oaf_server iid="OAFIID:TBUnreadCountApplet" type="factory"
+            location="OAFIID:TBUnreadCountApplet_Factory">
+
+        <oaf_attribute name="repo_ids" type="stringv">
+                <item value="IDL:GNOME/Vertigo/PanelAppletShell:1.0"/>
+                <item value="IDL:Bonobo/Control:1.0"/>
+                <item value="IDL:Bonobo/Unknown:1.0"/>
+        </oaf_attribute>
+        <oaf_attribute name="name" type="string" value="TBUnreadCount Applet"/>
+        <oaf_attribute name="description" type="string" value="Thunderbird Unread Counts"/>
+        <oaf_attribute name="panel:icon" type="string" value="@PIXMAPDIR@/tbunreadcount-applet.svg"/>
+</oaf_server>
+</oaf_info>

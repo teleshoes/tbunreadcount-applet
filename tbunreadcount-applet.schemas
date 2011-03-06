@@ -1,0 +1,15 @@
+<gconfschemafile>
+<schemalist>
+
+<schema>
+	<key>/schemas/apps/tbunreadcount_applet/prefs/delay</key>
+	<owner>tbunreadcount_applet</owner>
+	<type>int</type>
+	<default>1000</default>
+	<locale name="C">
+		<short>Delay in ms between updates</short>
+		<long>The time delay in milliseconds between updates.</long>
+	</locale>
+</schema>
+</schemalist>
+</gconfschemafile>
