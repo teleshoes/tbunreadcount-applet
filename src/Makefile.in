@@ -75,7 +75,7 @@ INCLUDES = -I. -I$(srcdir) 	$(GNOME_APPLETS_CFLAGS) 	-DGNOMEICONDIR=\""$(prefix)
 
 bin_PROGRAMS = tbunreadcount-applet
 
-tbunreadcount-applet_SOURCES = tbunreadcount-applet.c tbunreadcount-battinfo.c tbunreadcount-display.c
+tbunreadcount-applet_SOURCES = tbunreadcount-applet.c tbunreadcount-display.c
 
 tbunreadcount-applet_LDADD = $(GNOME_APPLETS_LIBS)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
@@ -87,7 +87,7 @@ DEFS = @DEFS@ -I. -I$(srcdir)
 CPPFLAGS = @CPPFLAGS@
 LDFLAGS = @LDFLAGS@
 LIBS = @LIBS@
-tbunreadcount-applet_OBJECTS = tbunreadcount-applet.o tbunreadcount-battinfo.o tbunreadcount-display.o tbunreadcount-prefs.o
+tbunreadcount-applet_OBJECTS = tbunreadcount-applet.o tbunreadcount-display.o tbunreadcount-prefs.o
 tbunreadcount-applet_DEPENDENCIES = 
 tbunreadcount-applet_LDFLAGS = 
 CFLAGS = @CFLAGS@

@@ -22,11 +22,8 @@
 #define TBUNREADCOUNT_DISPLAY_H
 
 #include <panel-applet.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gtk/gtklabel.h>
-#include <gtk/gtkimage.h>
 
-#include "tbunreadcount-battinfo.h"
 #include "tbunreadcount-prefs.h"
 
 #define PIXMAP_DIR "/usr/share/pixmaps/tbunreadcount-applet"
@@ -34,35 +31,10 @@
 #define IMAGE_WIDTH 24
 
 typedef struct {
-   GdkPixbuf *per0; 
-   GdkPixbuf *per10; 
-   GdkPixbuf *per20; 
-   GdkPixbuf *per30; 
-   GdkPixbuf *per40; 
-   GdkPixbuf *per50; 
-   GdkPixbuf *per60; 
-   GdkPixbuf *per70; 
-   GdkPixbuf *per80; 
-   GdkPixbuf *per90; 
-   GdkPixbuf *per100; 
-} PercentIconSet;
-
-typedef struct {
-  GdkPixbuf *none; 
-  PercentIconSet *idle;
-  PercentIconSet *charging;
-  PercentIconSet *discharging;
-} StatusIconSet;
-
-
-typedef struct {
     GtkLabel *label;
-    GtkImage *bat0img;
-    GtkImage *bat1img;
-    StatusIconSet *statusIconSet;
 } HUD;
 
-void update_display (HUD *hud, BatteryStatus *status, Prefs *prefs);
+void update_display (HUD *hud, Prefs *prefs);
 
 void init_display (HUD *hud, PanelApplet *applet);
 

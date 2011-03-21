@@ -22,40 +22,8 @@
 #include <panel-applet.h>
 
 #include "tbunreadcount-applet.h"
-#include "tbunreadcount-battinfo.h"
 #include "tbunreadcount-display.h"
 #include "tbunreadcount-prefs.h"
-
-void
-desktop_log (char *msg)
-{
-    char *cmd = malloc(256);
-    sprintf(cmd, "echo `date`: \"%s\" >> /home/wolke/Desktop/out", msg);
-    system(cmd);
-    g_free(cmd);
-} 
-
-void
-verb_statistics (BonoboUIComponent *ui_container,
-               gpointer           user_data,
-               const              char *cname)
-{
-    system("gnome-power-statistics &");
-}
-const char context_menu_xml [] =
-    "<popup name=\"button3\">\n"
-    "   <menuitem name=\"Properties Item\" "
-    "             verb=\"Statistics\" "
-    "           _label=\"_Statistics\"\n"
-    "          pixtype=\"stock\" "
-    "          pixname=\"gtk-properties\"/>\n"
-    "</popup>\n";
-const BonoboUIVerb context_menu_verbs [] = {
-        BONOBO_UI_VERB ("Statistics", verb_statistics),
-        BONOBO_UI_VERB_END
-};
-
-
 
 
 gboolean
@@ -68,23 +36,9 @@ update (TBUnreadCount *tbunreadcount)
         return FALSE;
     }
 
-    get_battery_status(tbunreadcount->status);
-
     load_prefs(tbunreadcount->applet, tbunreadcount->prefs);
-    tbunreadcount->status->msg = "";
-    perhaps_inhibit_charge(
-            tbunreadcount->status,
-            tbunreadcount->prefs->chargeStrategy,
-            tbunreadcount->prefs->chargeLeapfrogThreshold,
-            tbunreadcount->prefs->chargeBrackets,
-            tbunreadcount->prefs->chargeBracketsSize,
-            tbunreadcount->prefs->chargeBracketsPrefBattery);
-    perhaps_force_discharge(
-            tbunreadcount->status,
-            tbunreadcount->prefs->dischargeStrategy,
-            tbunreadcount->prefs->dischargeLeapfrogThreshold);
 
-    update_display(tbunreadcount->hud, tbunreadcount->status, tbunreadcount->prefs);
+    update_display(tbunreadcount->hud, tbunreadcount->prefs);
 
     return TRUE;
 }
@@ -134,18 +88,7 @@ tbunreadcount_applet_fill (PanelApplet *applet,
     tbunreadcount->hud = malloc(sizeof(HUD));
     init_display(tbunreadcount->hud, applet);
 
-    panel_applet_setup_menu (PANEL_APPLET (applet),
-	                         context_menu_xml,
-	                         context_menu_verbs,
-	                         applet);	
-    
-    tbunreadcount->status = malloc(sizeof(BatteryStatus));
-    tbunreadcount->status->count = 0;
-    tbunreadcount->status->bat0 = malloc(sizeof(Battery));
-    tbunreadcount->status->bat1 = malloc(sizeof(Battery));
-
     tbunreadcount->prefs = malloc(sizeof(Prefs));
-    tbunreadcount->prefs->chargeBrackets = NULL;
     load_prefs(tbunreadcount->applet, tbunreadcount->prefs);
 
     start_update(tbunreadcount);
@@ -155,7 +98,7 @@ tbunreadcount_applet_fill (PanelApplet *applet,
 
 PANEL_APPLET_BONOBO_FACTORY ("OAFIID:TBUnreadCountApplet_Factory",
                              PANEL_TYPE_APPLET,
-                             "ThinkPad Battery Status Applet",
+                             "Thunderbird Unread Count Applet",
                              "0",
                              tbunreadcount_applet_fill,
                              NULL);

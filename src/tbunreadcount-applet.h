@@ -23,19 +23,15 @@
 
 #include <panel-applet.h>
 
-#include "tbunreadcount-battinfo.h"
 #include "tbunreadcount-display.h"
 #include "tbunreadcount-prefs.h"
 
 typedef struct {
     HUD *hud;
     PanelApplet *applet;
-    BatteryStatus *status;
     Prefs *prefs;
     int currentDelay;
     int timer;
 } TBUnreadCount;
-
-void desktop_log (char *msg);
 
 #endif /* TBUNREADCOUNT_APPLET_H */
