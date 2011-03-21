@@ -26,6 +26,8 @@
 
 #include "tbunreadcount-prefs.h"
 
+#define COUNT_FILE "~/.thunderbird/*.default/unread-counts"
+
 #define PIXMAP_DIR "/usr/share/pixmaps/tbunreadcount-applet"
 #define IMAGE_HEIGHT 24
 #define IMAGE_WIDTH 24
